@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<conio.h>
+#define size 10
+void main()
+{
+ void selection_sort(int []);
+ int a[size],i;
+ clrscr();
+ printf("Enter the elements of array : ");
+ for(int i=0;i<size;i++)
+ {
+  scanf("%d",&a[i]);
+ }
+ selection_sort(a);
+ getch();
+}
+void selection_sort(int a[])
+{
+ int i,j,min,index;
+ for(i=0;i<size;i++)
+ {
+  min=a[i];
+  index=i;
+  for(j=i+1;j<size;j++)
+  {
+   if(a[j]<min)
+   {
+    min=a[j];
+    index=j;
+   }
+  }
+  if(index!=i)
+   {
+    a[index]=a[i];
+    a[i]=min;
+   }
+ }
+ for(i=0;i<size;i++)
+ {
+  printf("%d",a[i]);
+ }
+}
